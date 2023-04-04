@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil</title>
+    <link th:href="@{/css/Home.css}" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<header>
+
+    <h4 id="title"> Acceuil </h4>
+    <nav>
+        <ul class="elem_toolbar">
+            <!-- <li><a href="#">services</a></li> -->
+            <form action="/Setting.html" method="GET">
+            <li><a href="Setting.html"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+            </form>
+            <form action="/Notifications.html" method="GET">
+            <li><a href="Notifications.html"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </form>
+        </ul>
+    </nav>
+    <form action="/login" method="GET">
+    <a class="btn" href="login.html"><button>Deconnexion</button></a>
+    </form>
+</header>
+
+<main>
+    <div class="containerHome">
+        <form id="placement">
+            <div class="input">
+                <form action="/ShowWallet" method="GET">
+                <input type="submit" formaction="ShowWallet" id="BtnVisu" value="Visualiser portefeuille">
+                </form>
+                <form action="/ManageWallet" method="GET">
+                <input type="submit" formaction="ManageWallet" id="BtnConf" value="Gestion du portefeuille">
+                </form>
+                <form action="/CreateWallet" method="GET">
+                <input type="submit" formaction= "CreateWallet" id="BtnConf" value="Créer portefeuile">
+                </form>
+                <form action="/VisualizeStats" method="GET">
+                <input type="submit" formaction="VisualizeStats" id="BtnConf" value="Visualisation statistiques">
+                </form>
+                <form action="/facture_eau" method="GET">
+                <input type="submit" formaction="facture_eau" id="BtnConf" value="Facturation">
+                </form>
+            </div>
+        </form>
+
+        <img id="icon" src ="wallet.png">
+    </div>
+</main>
+
+</body>
+</html>

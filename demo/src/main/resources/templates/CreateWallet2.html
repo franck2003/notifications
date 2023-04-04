@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer Portefeuille/Points de fournitures</title>
+    <link rel="stylesheet" href="/css/Style3.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+</head>
+<body>
+<header>
+    <h4 id="title"> Points de fournitures </h4>
+    <nav>
+        <ul class="elem_toolbar">
+            <!-- <li><a href="#">services</a></li> -->
+            <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+            <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+        </ul>
+    </nav>
+
+    <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+</header>
+<main>
+    <form action="/traitement" method="get">
+        <div class="PointsDeFournitures" id="FournituresPoints">
+            <div class="champsFournitures">
+                <h2 id="txtMyWallet">Choisisser vos points de fournitures</h2>
+
+                <div class="first">
+
+                    <div class="fournisseur">
+                        <label for="elec" id="elecLabel"> Fournisseur d'électricité </label>
+                        <select id="elec" name="electricite_fournisseur">
+                            <option value="none" selected>Aucun</option>
+                            <option value="Luminus">Luminus</option>
+                            <option value="Electrabel">Electrabel</option>
+                        </select>
+                    </div>
+
+                    <div class="contrat">
+                        <label for="elec" id="elecLabel"> Durée du contrat </label>
+                        <select id="elec" name="electricite_duree">
+                            <option value="Annuel">Annuel</option>
+                            <option value="Mensuel">Mensuel</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="second">
+                    <div class="fournisseur">
+                        <label for="water" id="waterLabel"> Eau </label>
+                        <select id="water" name = "eau_fournisseur">
+                            <option value="none" selected>Aucun</option>
+                            <option value="SWDE">SWDE</option>
+                            <option value="l'eau">l'eau</option>
+                        </select>
+                    </div>
+
+                    <div class="contrat">
+                        <label for="water" id="waterLabel"> Durée du contrat </label>
+                        <select id="water" name = "eau_duree">
+                            <option value="Annuel">Annuel</option>
+                            <option value="Mensuel">Mensuel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="third">
+
+                    <div class="fournisseur">
+                        <label for="gaz" id="gazLabel"> Gaz </label>
+                        <select id="gaz" name = "gaz_fournisseur">
+                            <option value="none" selected>Aucun</option>
+                            <option value="lampiris">lampiris</option>
+                            <option value="Gaz2">Gaz2</option>
+                        </select>
+                    </div>
+                    <div class="contrat">
+                        <label for="gaz" id="gazLabel"> Durée du contrat </label>
+                        <select id="gaz" name = "eau_gaz">
+                            <option value="Annuel">Annuel</option>
+                            <option value="Mensuel">Mensuel</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="submit" id="BtnConf" value="envoyer">
+            </div>
+        </div>
+    </form>
+</main>
+</body>
+</html>

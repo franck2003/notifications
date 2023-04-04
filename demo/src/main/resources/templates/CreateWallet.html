@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer Portefeuille/Habitation</title>
+    <link rel="stylesheet" href="/css/Style3.css">
+
+</head>
+<body>
+    <header>
+        <h4 id="title"> Habitation </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                <!-- <li><a href="#">services</a></li> -->
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        <form action="/login" method="GET">
+        <a class="btn" href="login"><button>Deconnexion</button></a>
+        </form>
+    </header>
+    <main>
+        <form action="/CreateWallet2" th:object="${adresse}" method="GET">
+            <div class="WalletChamps" id="WalletChamps">
+                    <div class="champs">
+                        <div class="m-3 text-center">
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">rue: </label>
+                                <div class="col-8">
+                                    <input type="text" th:field="*{rue}" class="form-control" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">numero: </label>
+                                <div class="col-8">
+                                    <input type="number" th:field="*{numero}" class="form-control" required minlength="6" maxlength="10"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">Code Postale: </label>
+                                <div class="col-8">
+                                    <input type="number" th:field="*{code_postale}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">ville: </label>
+                                <div class="col-8">
+                                    <input type="text" th:field="*{ville}" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">batiment: </label>
+                                <div class="col-8">
+                                    <input type="text" th:field="*{batiment}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" formaction="CreateWallet2.html" id="BtnConf" value="envoyer">
+                    </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

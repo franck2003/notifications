@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facturation d'énergie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+		function calculerFacture() {
+			var prixKWh = 0.15; // Prix du kWh
+			var totalConsommation = 0;
+			var totalFacture = 0;
+			var mois = document.getElementsByName('mois');
+			var consommation = document.getElementsByName('consommation');
+			var facture = document.getElementsByName('facture');
+
+			// Calculer le total de consommation et le total de facture pour chaque mois
+			for (var i = 0; i < mois.length; i++) {
+				var moisConsommation = parseFloat(consommation[i].value);
+				var moisFacture = moisConsommation * prixKWh;
+				totalConsommation += moisConsommation;
+				totalFacture += moisFacture;
+				facture[i].value = moisFacture.toFixed(2) + '€';
+			}
+
+			// Afficher le total de consommation et le total de facture
+			document.getElementById('total-consommation').innerHTML = totalConsommation.toFixed(2) + ' kWh';
+			document.getElementById('total-facture').innerHTML = totalFacture.toFixed(2) + '€';
+		}
+	</script>
+</head>
+<body>
+<header>
+    <h1>Facturation d'énergie</h1>
+    <p>Entrez les informations de consommation d'énergie pour chaque mois :</p>
+</header>
+<main>
+    <form>
+        <table>
+            <thead>
+            <tr>
+                <th>Mois</th>
+                <th>Consommation (kWh)</th>
+                <th>Facture (€)</th>
+                <th>Statut de paiement</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="text" name="mois" value="Janvier" readonly></td>
+                <td><input type="number" name="consommation" min="0" step="0.01"></td>
+                <td><input type="text" name="facture" readonly></td>
+                <td><input type="text" name="statu de paiement" value="impayé" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="mois" value="Février" readonly></td>
+                <td><input type="number" name="consommation" min="0" step="0.01"></td>
+                <td><input type="text" name="facture" readonly></td>
+                <td><input type="text" name="statu de paiement" value="impayé" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="mois" value="Mars" readonly></td>
+                <td><input type="number" name="consommation" min="0" step="0.01"></td>
+                <td><input type="text" name="facture" readonly></td>
+                <td><input type="text" name="statu de paiement" value="impayé" readonly></td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="calculerFacture()">Calculer la facture</button>
+    </form>
+</main>
