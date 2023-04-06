@@ -66,7 +66,7 @@ public class Adresse {
 
     @Override
     public String toString() {
-        return "Adresse{" +
+        return "{" +
                 "rue='" + rue + '\'' +
                 ", numero=" + numero +
                 ", batiment='" + batiment + '\'' +

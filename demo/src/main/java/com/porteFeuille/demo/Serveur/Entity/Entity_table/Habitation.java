@@ -13,46 +13,20 @@ public class Habitation{
     @Column(name = "habitationId")
     private Long habitationId;
 
-    @ManyToOne
-    @JoinColumn(name = "pointFournitureId")
-    private PointFourniture pointFournitureId;
-
     private String adresse;
 
     @ManyToOne
     @JoinColumn(name = "consommateur_id")
     private Consommateur consommateur_id;
-
-    @ManyToOne
-    @JoinColumn(name = "fournisseur_id")
-    private Fournisseur fournisseurId;
     @Transient
     private Adresse siege;
-
-    public Fournisseur getFournisseurId() {
-        return fournisseurId;
-    }
-
-    public void setFournisseurId(Fournisseur fournisseurId) {
-        this.fournisseurId = fournisseurId;
-    }
-
-    public PointFourniture getPointFourniture() {
-        return pointFournitureId;
-    }
-
-    public void setPointFourniture(PointFourniture pointFourniture) {
-        this.pointFournitureId= pointFourniture;
-    }
 
     public Habitation() {
     }
 
-    public Habitation(PointFourniture pointFourniture, String adresse, Consommateur consommateur_id, Fournisseur fournisseurId) {
-        this.pointFournitureId = pointFourniture;
+    public Habitation( String adresse, Consommateur consommateur_id) {
         this.adresse = adresse;
         this.consommateur_id = consommateur_id;
-        this.fournisseurId = fournisseurId;
     }
 
     public Habitation(Long l) {
@@ -91,8 +65,6 @@ public class Habitation{
     public String toString() {
         return "Habitation{" +
                 "habitationId=" + habitationId +
-                ", ean=" + pointFournitureId +
-                ", adresse='" + adresse + '\'' +
                 ", consommateur_id=" + consommateur_id +
                 ", siege=" + siege +
                 '}';

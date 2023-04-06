@@ -46,10 +46,6 @@ public class Consommation {
         this.habitationId = habitationId;
     }
 
-
-    public Consommation(long ean, long l, int valeur, Date date) {
-    }
-
     public Consommation() {
     }
 
